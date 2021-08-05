@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody player;
-    public float speed = 30f;
-    // Start is called before the first frame update
-    void Start()
-    {
+    public float speed = 100f;
+    private int score = 0;
 
+    void OnTriggerEnter(Collider other){
+        if(other.tag == "Pickup"){
+            score++;
+            Debug.Log("Score: " + score);
+        }
     }
 
     // Update is called once per frame
