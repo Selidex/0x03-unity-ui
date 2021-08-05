@@ -7,11 +7,16 @@ public class PlayerController : MonoBehaviour
     public Rigidbody player;
     public float speed = 100f;
     private int score = 0;
+    public int health = 5;
 
     void OnTriggerEnter(Collider other){
         if(other.tag == "Pickup"){
             score++;
             Debug.Log("Score: " + score);
+        }
+        if(other.tag == "Trap"){
+            health--;
+            Debug.Log("Health: " + health);
         }
     }
 
