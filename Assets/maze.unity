@@ -4063,7 +4063,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a0267100c510b48893dabab7079064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1083579730}
   speed: 1000
   health: 5
 --- !u!4 &1132780242 stripped

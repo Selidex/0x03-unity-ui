@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody player;
-    public float speed = 100f;
+    Rigidbody player;
+    public float speed = 5f;
     private int score = 0;
     public int health = 5;
+
+
+    void Start(){
+        player = GetComponent<Rigidbody>();
+    }
 
     void OnTriggerEnter(Collider other){
         if(other.tag == "Pickup"){
@@ -56,6 +61,6 @@ public class PlayerController : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.RightArrow)){
             player.AddForce(speed * Time.deltaTime, 0, 0);
-        }
+        } 
     }
 }
