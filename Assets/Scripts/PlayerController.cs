@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public int health = 5;
     public Text scoreText;
     public Text healthText;
+    public Image wL;
 
 
     void Start(){
@@ -30,7 +31,11 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Health: " + health);
         }
         if(other.tag == "Goal"){
-            Debug.Log("You win!");
+            Text wlt = wL.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
+            wL.color = Color.green;
+            wlt.color = Color.black;
+            wlt.text = "You Win!";
+            wL.gameObject.SetActive(true);
         }
     }
     void Update(){
