@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private int score = 0;
     public int health = 5;
     public Text scoreText;
+    public Text healthText;
 
 
     void Start(){
@@ -25,7 +26,8 @@ public class PlayerController : MonoBehaviour
         }
         if(other.tag == "Trap"){
             health--;
-            Debug.Log("Health: " + health);
+            SetHealthText();
+            //Debug.Log("Health: " + health);
         }
         if(other.tag == "Goal"){
             Debug.Log("You win!");
@@ -40,6 +42,10 @@ public class PlayerController : MonoBehaviour
 
     void SetScoreText(){
         scoreText.text = "Score: " + score.ToString();
+    }
+
+    void SetHealthText(){
+        healthText.text = "Health: " + health.ToString();
     }
 
     // Update is called once per frame
