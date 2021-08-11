@@ -4144,6 +4144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1000
   health: 5
+  scoreText: {fileID: 151898391}
 --- !u!4 &1132780242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8357036968611212230, guid: bf827ed85a5f9e04c9da303756926421,

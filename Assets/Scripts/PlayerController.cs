@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     private int score = 0;
     public int health = 5;
+    public Text scoreText;
 
 
     void Start(){
@@ -18,7 +20,8 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if(other.tag == "Pickup"){
             score++;
-            Debug.Log("Score: " + score);
+            SetScoreText();
+            //Debug.Log("Score: " + score);
         }
         if(other.tag == "Trap"){
             health--;
@@ -33,6 +36,10 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Game Over!");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+    }
+
+    void SetScoreText(){
+        scoreText.text = "Score: " + score.ToString();
     }
 
     // Update is called once per frame
