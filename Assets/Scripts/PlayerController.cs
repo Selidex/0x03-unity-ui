@@ -48,6 +48,10 @@ public class PlayerController : MonoBehaviour
             wL.gameObject.SetActive(true);
             StartCoroutine(LoadScene(3));
         }
+
+        if (Input.GetKey(KeyCode.Escape)){
+            SceneManager.LoadScene(0);
+        }
     }
 
     IEnumerator LoadScene(float seconds){
