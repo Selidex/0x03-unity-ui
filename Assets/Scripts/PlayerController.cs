@@ -36,13 +36,23 @@ public class PlayerController : MonoBehaviour
             wlt.color = Color.black;
             wlt.text = "You Win!";
             wL.gameObject.SetActive(true);
+            StartCoroutine(LoadScene(3));
         }
     }
     void Update(){
         if(health == 0){
-            Debug.Log("Game Over!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Text wlt = wL.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
+            wL.color = Color.red;
+            wlt.color = Color.white;
+            wlt.text = "Game Over!";
+            wL.gameObject.SetActive(true);
+            StartCoroutine(LoadScene(3));
         }
+    }
+
+    IEnumerator LoadScene(float seconds){
+         yield return new WaitForSeconds(seconds);
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void SetScoreText(){
